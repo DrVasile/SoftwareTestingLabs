@@ -18,5 +18,11 @@
 1. I've created a test for my fronten Vue.js app in SeleniumIDE first:
 ![](img/Capture1.PNG)
 
-## Conclusions : 
-1. 
+2. After, using IntelliJ IDEA and Selenium Web Driver I've created a Java project in which I test the login feature of the app.
+The code of the program can be seen here * [Source code](https://github.com/Wazea/SeleniumLabs/tree/master/SeleniumIntro/src)
+
+In the following figures is the result of execution :
+
+![](img/Capture1.PNG)
+
+![](img/Capture1.PNG)
