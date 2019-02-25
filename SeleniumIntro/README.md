@@ -23,6 +23,6 @@ The code of the program can be seen here * [Source code](https://github.com/Waze
 
 In the following figures is the result of execution :
 
-![](img/Capture1.PNG)
+![](img/Capture2.PNG)
 
-![](img/Capture1.PNG)
+![](img/Capture3.PNG)
