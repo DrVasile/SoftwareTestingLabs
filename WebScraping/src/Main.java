@@ -12,6 +12,7 @@ public class Main {
 
     WebDriver driver;
     WebDriverWait driverWait;
+    List<WebElement> languageNamesList;
 
     public void initDriver() {
         try {
@@ -24,26 +25,31 @@ public class Main {
             driverWait = new WebDriverWait(driver, 30);
 
             driver.navigate().to("http://www.galabra.co.il");
-
-            String aboutButton = "//*[@id='about']div/a";
-            driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(aboutButton)));
-            driver.findElement(By.xpath(aboutButton)).click();
-            String languagesParagraph = "//*[@id='page1']/div[2]/div[5]";
-            driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(languagesParagraph)));
-
-            List<WebElement> languageNamesList = driver.findElements(By.xpath("//*[@id='page1']/div[2]/div[5]/p"));
-            for (WebElement lang : languageNamesList) {
-                System.out.println(lang.toString());
-            }
-
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void getList() {
+        String aboutButton = "//*[@id='about']/child::div/a";
+        driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(aboutButton)));
+        driver.findElement(By.xpath(aboutButton)).click();
+        String languagesParagraph = "//*[@id='page1']/child::div[2]/div[5]";
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(languagesParagraph)));
+
+        languageNamesList = driver.findElements(By.xpath("//*[@id='page1']/child::div[2]/div[5]/p"));
+    }
+
+    public void printList() {
+        for (WebElement lang : languageNamesList) {
+            System.out.println(lang.getText());
         }
     }
 
     public static void main(String[] args) {
         Main test = new Main();
         test.initDriver();
-        //test.invokeBrowser();
+        test.getList();
+        test.printList();
     }
 }
