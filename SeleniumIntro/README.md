@@ -19,7 +19,7 @@
 ![](img/Capture1.PNG)
 
 2. After, using IntelliJ IDEA and Selenium Web Driver I've created a Java project in which I test the login feature of the app.
-The code of the program can be seen here * [Source code](https://github.com/Wazea/SeleniumLabs/tree/master/SeleniumIntro/src)
+The code of the program can be seen here [Source code](https://github.com/Wazea/SeleniumLabs/tree/master/SeleniumIntro/src)
 
 In the following figures is the result of execution :
 
