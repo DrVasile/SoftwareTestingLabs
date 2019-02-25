@@ -24,34 +24,21 @@ public class DemoTest {
         }
     }
 
-    public void invokeBrowser() {
-        try {
-            driver.get("http://edureka.co");
-            searchCourse();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+    public void login() {
+        driver.get("http://localhost:8080/#/login");
+        WebElement email = driver.findElement(By.xpath("//input[@name='email']"));
+        email.sendKeys("abc.gmailcom");
 
-    public void searchCourse() {
-        driver.findElement(By.id("search-inp")).sendKeys("Java");
-        driver.findElement(By.id("search-button-top")).click();
-    }
+        WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
+        password.sendKeys("vasile");
 
-    public void setEmail() {
-        driver.get("http://demo.guru99.com/");
-        WebElement element = driver.findElement(By.xpath("//input[@name='emailid']"));
-        element.sendKeys("abc@gmailcom");
-
-        WebElement button = driver.findElement(By.xpath("//input[@name='btnLogin']"));
+        WebElement button = driver.findElement(By.xpath("//button[@class='fluid ui primary button']"));
         button.click();
     }
 
     public static void main(String[] args) {
         DemoTest test = new DemoTest();
         test.initDriver();
-        test.setEmail();
+        test.login();
     }
 }
-
-http://localhost:8080/#/login
