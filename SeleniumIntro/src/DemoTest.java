@@ -27,7 +27,7 @@ public class DemoTest {
     public void login() {
         driver.get("http://localhost:8080/#/login");
         WebElement email = driver.findElement(By.xpath("//input[@name='email']"));
-        email.sendKeys("abc.gmailcom");
+        email.sendKeys("vasile@gmail.com");
 
         WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
         password.sendKeys("vasile");
