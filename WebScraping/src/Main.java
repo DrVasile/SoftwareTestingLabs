@@ -50,32 +50,38 @@ public class Main {
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
             driverWait = new WebDriverWait(driver, 30);
-            driver.navigate().to("https://www.elefant.md");
+            driver.navigate().to("https://www.sauto.md/ro/");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     private void getList() {
-        String firstButtonXpath = "//*[@id=\"mobileCat-CartiCatalog\"]/a[1]";
-        //String secondButtonXpath = "//*[@id=\"js-categories-container\"]/div/div[1]/ul[1]/li[1]/ul/li[1]/a";
-        String itemsPageXpath = "//*[@id=\"family-page\"]/div/div/div[2]/div[4]";
-        String itemsXpath = "//*[@id=\"family-page\"]/div/div/div[2]/div[4]/div";
+        String firstButtonXpath = "//*[@id=\"main_menu\"]/div[1]/a[1]";
+        //String secondButtonXpath = "//*[@id=\"__next\"]/div[3]/div[2]/ul/li[1]/ul/li[1]/div/div/ul/li[1]/a";
+        String itemsPageXpath = "//*[@id=\"content\"]/main/section";
+        String itemsXpath = "//*[@id=\"content\"]/main/section/a";
 
         driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(firstButtonXpath)));
         driver.findElement(By.xpath(firstButtonXpath)).click();
 
+        //driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(secondButtonXpath)));
+        //driver.findElement(By.xpath(secondButtonXpath)).click();
+
         driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(itemsPageXpath)));
-        itemList = driver.findElements(By.xpath(itemsXpath));
+        itemList = driver.findElements(By.className("car_box"));
         List<Pair> pairs = new ArrayList<Pair>();
 
         for (WebElement element : itemList) {
-            String nameClass = "product-title";
-            String priceClass = "current-price";
+            String brandClass = "brand";
+            String modelClass = "model";
+            String priceClass = "price";
             String name;
             String price;
             Float floatPrice;
-            name = element.findElement(By.className(nameClass)).getText();
+            String brand = element.findElement(By.className(brandClass)).getText();
+            String model = element.findElement(By.className(brandClass)).getText();
+            name = brand + " " + model;
             price = element.findElement(By.className(priceClass)).getText();
             price = price.replaceAll("[^,.0123456789]","");
             price = price.replace(",", ".");
