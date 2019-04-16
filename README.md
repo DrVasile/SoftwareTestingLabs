@@ -1,4 +1,4 @@
-# SeleniumLabs
+# Software Testing Labs
 
 * [Laboratory work nr. 1](https://github.com/Wazea/SeleniumLabs/tree/master/SeleniumIntro)
 
