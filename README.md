@@ -1,8 +1,8 @@
 # Software Testing Labs
 
-* [Laboratory work nr. 1](https://github.com/Wazea/SoftwareTestingLabs/tree/master/SeleniumIntro)
+* [Laboratory work nr. 1](https://github.com/Wazea/SoftwareTestingLabs/tree/master/1.%20SeleniumIntro)
 
-* [Laboratory work nr. 2](https://github.com/Wazea/SoftwareTestingLabs/tree/master/WebScraping)
+* [Laboratory work nr. 2](https://github.com/Wazea/SoftwareTestingLabs/tree/master/2.%20WebScraping)
 
 * [Laboratory work nr. 3](https://github.com/Wazea/SoftwareTestingLabs/blob/master/3.%20BlackBox/reportLab3.pdf)
 
